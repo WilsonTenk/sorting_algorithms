@@ -27,7 +27,7 @@ void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **current)
 		*tail = *current;
 	(*current)->prev = tmp;
 	tmp->next = *current;
-	*shaker = tmp;
+	*current = tmp;
 }
 
 /**
@@ -87,7 +87,7 @@ void cocktail_sort_list(listint_t **list)
 		for (current = current->prev; current != *list;
 				current = current->prev)
 		{
-			if (current->n < shaker->prev->n)
+			if (current->n < current->prev->n)
 			{
 				swap_node_behind(list, &tail, &current);
 				print_list((const listint_t *)*list);

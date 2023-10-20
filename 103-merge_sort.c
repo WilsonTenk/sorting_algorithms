@@ -25,7 +25,7 @@ void merge_subarr(int *subar, int *buff, size_t front, size_t mid,
 	print_array(subar + mid, back - mid);
 
 	for (u = front, j = mid; u < mid && j < back; k++)
-		buff[k] = (subarr[u] < subar[j]) ? subar[u++] : subar[j++];
+		buff[k] = (subar[u] < subar[j]) ? subar[u++] : subar[j++];
 	for (; u < mid; u++)
 		buff[k++] = subar[u];
 	for (; j < back; j++)
